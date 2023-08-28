@@ -5,18 +5,15 @@
   text-align: center;
 }
 .game{
-  width: 40vw;
-  min-width: 280px;
-  max-width: 480px;
-  aspect-ratio: 1;
-  background-image: url('./assets/wall-wood.jpg');
-  background-size: cover;
-  border-radius: 1rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  font-size: 3rem;
-  color: #321E1E;
-  
+  background-color: #C28A59;
+  box-sizing: border-box;
+  padding: 42px;
+  width: 480px;
+  height: 480px;
+  border-radius: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 4px 4px 10px black;
 }
 .turn{
   display: flex;
@@ -27,61 +24,238 @@
   color: #442a8d;
 }
 .square.is-selected{
-  background-color: aliceblue;
+
+  background-color: #ecb622;
+}
+img{
+  width: 80px;
+  filter: drop-shadow(2px 2px 2px black);
+  
 }
 .turn .square{
-  padding: 1rem;  
+  height: 80px;
+  padding: 1.2rem;  
   border-radius: .5rem;
 }
 .game .square{
-  box-sizing: border-box;
-  display: grid;
-  place-items: center;
+  min-width: 100px;
+  height: 100px;
+  border: 24px solid #ecb622;
+  box-shadow: 6px 6px 7px 2px rgba(0, 0, 0, 0.3) inset;
 }
+
 .game .square:nth-child(1){
-  border-right: 6px solid #321E1E;
-  border-bottom: 6px solid #321E1E;
+  border-top-left-radius: 24px;
+  border-right: 12px solid #ecb622;
+  border-bottom: 12px solid #ecb622;
 }
 .game .square:nth-child(2){
-  border-right: 6px solid #321E1E;
-  border-left: 6px solid #321E1E;
-  border-bottom: 6px solid #321E1E;
-  box-shadow: inset 12px 0px 8px 0px #321E1E;
+  border-right: 12px solid #ecb622;
+  border-left: 12px solid #ecb622;
+  border-bottom: 12px solid #ecb622;
 }
 .game .square:nth-child(3){
-  border-left: 6px solid #321E1E;
-  border-bottom: 6px solid #321E1E;
-  box-shadow: inset 12px 0px 8px 0px #321E1E;
+  border-top-right-radius: 24px;
+  border-left: 12px solid #ecb622;
+  border-bottom: 12px solid #ecb622;
 }
 .game .square:nth-child(4){
-  border-right: 6px solid #321E1E;
-  border-top: 6px solid #321E1E;
-  border-bottom: 6px solid #321E1E;
-  box-shadow: inset 0px 10px 15px 0px #321E1E;
+  border: 12px solid #ecb622;
+  border-left: 24px solid #ecb622;
 }
 .game .square:nth-child(5){
-  border: 6px solid #321E1E;
-  box-shadow: inset 10px 10px 15px 2px #321E1E;
+  border: 12px solid #ecb622;
 }
 .game .square:nth-child(6){
-  border-left: 6px solid #321E1E;
-  border-top: 6px solid #321E1E;
-  border-bottom: 6px solid #321E1E;
-  box-shadow: inset 10px 10px 15px 0px #321E1E;
+  border: 12px solid #ecb622;
+  border-right: 24px solid #ecb622;
 }
 .game .square:nth-child(7){
-  border-right: 6px solid #321E1E;
-  border-top: 6px solid #321E1E;
-  box-shadow: inset 0px 10px 20px 0px #321E1E;
+  border-bottom-left-radius: 24px;
+  border-top: 12px solid #ecb622;
+  border-right: 12px solid #ecb622;
 }
 .game .square:nth-child(8){
-  border-left: 6px solid #321E1E;
-  border-top: 6px solid #321E1E;
-  border-right: 6px solid #321E1E;
-  box-shadow: inset 12px 12px 20px 0px #321E1E;
+  border-top-left-radius: 0;
+  border: 12px solid #ecb622;
+  border-bottom: 24px solid #ecb622;
 }
 .game .square:nth-child(9){
-  border-left: 6px solid #321E1E;
-  border-top: 6px solid #321E1E;
-  box-shadow: inset 12px 12px 20px 0px #321E1E;
+  border-bottom-right-radius: 24px;
+  border-top: 12px solid #ecb622;
+  border-left: 12px solid #ecb622;
+}
+.game .square svg {
+  width: 84px;
+  height: 84px;
+  padding: 6px;
+  filter: drop-shadow(2px 4px 6px black);
+}
+.game-reload {
+  width: 100px;
+  padding: 32px;
+  padding-bottom: 0 ;
+}
+.winner{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.538);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.winner .text{
+  color: #442a8d;
+  width: 60vw;
+  font-size: 3rem;
+  background-color: #ecb622;
+  border-radius: 3rem;
+}
+.winner .text h2 {
+  margin: 2rem;
+}
+.winner .text svg {
+  filter: drop-shadow(6px 6px 4px black);
+}
+.winner .text footer {
+  margin: 2rem;
+}
+.winner .text footer img {
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .game {
+    width: 360px;
+    height: 360px;
+    padding: 24px;
+  }
+  .game .square {
+    min-width: 72px;
+    height: 72px;
+  }
+  .game .square svg{
+    width: 54px;
+    height: 54px;
+    padding: 8px;
+  }
+  .winner .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #442a8d;
+    width: 100%;
+    height: 100vh;
+    font-size: 3rem;
+    background-color: #ecb622;
+    border-radius: 0;
+  }
+  @media (max-height: 825px) {
+    main{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    main h1{
+      display: none;
+    }
+  }
+}
+@media (max-width: 425px) {
+  .game {
+    width: 280px;
+    height: 280px;
+    padding: 12px;
+    margin: 0 auto;
+  }
+  .game .square {
+    min-width: 69.3px;
+    height: 69.3px;
+    border: 12px solid #ecb622;
+  }
+  .game .square svg{
+    width: 60px;
+    height: 60px;
+    padding: 4px;
+  }
+    .game .square:nth-child(1) {
+      border-top-left-radius: 12px;
+      border-right: 6px solid #ecb622;
+      border-bottom: 6px solid #ecb622;
+    }
+  
+    .game .square:nth-child(2) {
+      border-right: 6px solid #ecb622;
+      border-left: 6px solid #ecb622;
+      border-bottom: 6px solid #ecb622;
+    }
+  
+    .game .square:nth-child(3) {
+      border-top-right-radius: 12px;
+      border-left: 6px solid #ecb622;
+      border-bottom: 6px solid #ecb622;
+    }
+  
+    .game .square:nth-child(4) {
+      border: 6px solid #ecb622;
+      border-left: 12px solid #ecb622;
+    }
+  
+    .game .square:nth-child(5) {
+      border: 6px solid #ecb622;
+    }
+  
+    .game .square:nth-child(6) {
+      border: 6px solid #ecb622;
+      border-right: 12px solid #ecb622;
+    }
+  
+    .game .square:nth-child(7) {
+      border-bottom-left-radius: 24px;
+      border-top: 6px solid #ecb622;
+      border-right: 6px solid #ecb622;
+    }
+  
+    .game .square:nth-child(8) {
+      border-top-left-radius: 0;
+      border: 6px solid #ecb622;
+      border-bottom: 12px solid #ecb622;
+    }
+  
+    .game .square:nth-child(9) {
+      border-bottom-right-radius: 24px;
+      border-top: 6px solid #ecb622;
+      border-left: 6px solid #ecb622;
+    }
+  .winner .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #442a8d;
+    width: 100%;
+    height: 100vh;
+    font-size: 3rem;
+    background-color: #ecb622;
+    border-radius: 0;
+  }
+  @media (max-height: 825px) {
+    main{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    main h1{
+      display: none;
+    }
+  }
 }

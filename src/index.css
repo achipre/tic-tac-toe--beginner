@@ -30,11 +30,14 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  padding: 32px;
+  margin: 0;
 }
 
 button {

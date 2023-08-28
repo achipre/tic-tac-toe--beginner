@@ -1,8 +1,31 @@
-# React + Vite
+<div align='center'>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Tic-Tac-Toe (Reactjs)
 
-Currently, two official plugins are available:
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+<div align='center'>
+
+<div style='width: 75%'>
+
+![Cover Tic-Tac-Toe](src/assets/cover-tictactoe-reactjs.jpg)
+
+</div>
+
+</div>
+
+## Description
+
+This is a simple page build with react using [useStated](https://react.dev/reference/react/useState) also saving in the LocalStorage
+
+Demo: [https://simplecard-react.netlify.app/](https://tresenraya-reactjs.netlify.app)
+
+## Tecnologies
+Library: [React](https://react.dev/)
+
+Bundle: [Vite](https://vitejs.dev/)
+
+Deploy: [Netlify](https://www.netlify.com/)
+
+Dependencies: [canvas-cofetti](https://www.npmjs.com/package/canvas-confetti)

@@ -1,23 +1,29 @@
-import { Square } from "./Square"
+import { Square } from './Square'
 
-export const WinnerModal = ({winner, resetGame}) => {
+import Reload from '../assets/reload.svg'
+
+import { CircleSVG } from '../components/CircleSVG'
+import { CruzSVG } from '../components/CruzSVG'
+
+export function WinnerModal ({ winner, resetGame }) {
+  console.log(winner)
   return (
-    <section className='winner'>
+    <section className="winner">
       <div className="text">
         <h2>
           {
             winner === false
               ? 'Empate'
-              : 'Ganó' 
+              : 'Ganó'
           }
         </h2>
         <header className="win">
           {
-            winner && <Square>{winner}</Square>
+            winner && <Square>{winner === 'O' ? <CircleSVG width={240}/> : <CruzSVG width={240}/> }</Square>
           }
         </header>
         <footer>
-          <button onClick={resetGame}>Empezar de nuevo</button>
+          <img className='game-reload' onClick={resetGame} src={Reload} alt="Restart Game" />
         </footer>
       </div>
     </section>
